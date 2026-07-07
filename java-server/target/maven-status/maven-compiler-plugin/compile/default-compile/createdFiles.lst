@@ -1,0 +1,11 @@
+com\wrapza\model\ContactRequest.class
+com\wrapza\config\CorsConfig.class
+com\wrapza\controller\ContactController.class
+com\wrapza\controller\InvestmentController.class
+com\wrapza\model\InvestmentItem.class
+com\wrapza\WrapzaApplication.class
+com\wrapza\model\MenuItem.class
+com\wrapza\exception\GlobalExceptionHandler.class
+com\wrapza\config\CorsConfig$1.class
+com\wrapza\controller\HealthController.class
+com\wrapza\controller\MenuController.class

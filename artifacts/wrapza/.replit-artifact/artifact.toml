@@ -1,0 +1,38 @@
+kind = "web"
+previewPath = "/"
+title = "Wrapza Urban Fusion Kitchen"
+version = "1.0.0"
+id = "artifacts/wrapza"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22083
+
+[services.development]
+run = "pnpm --filter @workspace/wrapza run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/wrapza", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/wrapza/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22083"
+BASE_PATH = "/"
+
+[[services]]
+name = "java-api"
+paths = [ "/java-api" ]
+localPort = 8090
+
+[services.development]
+run = "cd /home/runner/workspace/java-server && mvn spring-boot:run"
+
+[services.env]
+PORT = "8090"
